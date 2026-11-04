@@ -1,0 +1,5 @@
+name,platform,price,units,shipping_charged,shipping_cost,cogs,returns,offsite_ads
+Vintage Denim Jacket,etsy,48.00,12,6.00,9.50,18.00,1,false
+Handmade Soy Candle,etsy,14.00,30,0.00,6.25,5.50,2,false
+Printable Wall Art Set,gumroad,9.00,140,0.00,0.00,0.00,6,false
+Ceramic Mug,etsy,12.00,60,4.50,8.90,6.80,9,true
