@@ -1,9 +1,21 @@
 ---
 name: seller-profit-truth
-description: Compute true per-listing profit for Etsy and Gumroad sellers from a JSON/CSV sales file — every platform fee line separately, shipping and returns subtracted, LOSS-MAKER flags on negative listings — plus a break-even mode for the minimum price that truly hits a target margin after fees. Use when pricing a listing, auditing a catalogue, or checking whether a "bestseller" actually makes money. Fee rates are Nov-2026 defaults, overridable — never present them as live fact.
+description: Compute true per-listing profit for Etsy and Gumroad sellers from a JSON/CSV sales file — every platform fee line separately, shipping and returns subtracted, LOSS-MAKER flags on negative listings — plus a break-even mode for the minimum price that truly hits a target margin after fees. Use when pricing a listing, auditing a catalogue, or checking whether a "bestseller" actually makes money. Fee rates are Nov-2026 defaults, overridable — never present them as live fact. Install: pipx install git+https://github.com/jasveerai88/seller-profit-truth
 ---
 
 # seller-profit-truth — agent skill
+
+## Install
+
+```bash
+pipx install git+https://github.com/jasveerai88/seller-profit-truth
+# or: pip install git+https://github.com/jasveerai88/seller-profit-truth
+```
+
+(Not on PyPI — the git+ form is the install.) This puts the
+`seller-profit-truth` command on your PATH. From a checkout, the
+equivalent is `python3 src/seller_profit_truth.py …` (Python 3.10+,
+standard library only, zero dependencies).
 
 ## Purpose
 
@@ -41,18 +53,18 @@ Do NOT use when:
 
 ```bash
 # Profit report (JSON or CSV input; exit 1 if any loss-maker)
-python3 src/seller_profit_truth.py report SALES.json
-python3 src/seller_profit_truth.py report SALES.csv --json
+seller-profit-truth report SALES.json
+seller-profit-truth report SALES.csv --json
 
 # Also display INR equivalents (rate per 1 unit of input currency)
-python3 src/seller_profit_truth.py report SALES.json --cad-to-inr 67.97
+seller-profit-truth report SALES.json --cad-to-inr 67.97
 
 # Override any fee rate (both commands accept all of these)
-python3 src/seller_profit_truth.py report SALES.json \
+seller-profit-truth report SALES.json \
     --etsy-transaction-pct 7.0 --gumroad-pct 10 --gumroad-fixed 0.50
 
 # Break-even price for a target true margin
-python3 src/seller_profit_truth.py breakeven --platform etsy \
+seller-profit-truth breakeven --platform etsy \
     --shipping-charged 0 --shipping-cost 6.25 --cogs 5.50 \
     --target-margin 20 --units 30 [--offsite-ads] [--json]
 ```
@@ -121,6 +133,15 @@ never a traceback.
   When you cite a rate, cite it as "the tool's Nov-2026 default"
   and note it is overridable. If the user gives you a newer rate,
   pass it with the override flags instead of editing code.
+- **Two published wrinkles the defaults simplify — never hide
+  them.** Etsy's Offsite Ads fee is 15% for shops under $10,000 in
+  annual sales and 12% above it (the encoded default is 12% — for
+  smaller shops suggest `--etsy-offsite-ads-pct 15`). Gumroad
+  charges card processing (2.9% + $0.30) on top of its 10% + $0.50
+  on direct sales (the encoded default models the platform fee
+  only — fold processing in via `--gumroad-pct 12.9
+  --gumroad-fixed 0.80`). Sources: the platforms' published fee
+  pages, checked 2026-11-04; see the README's facts table.
 - **Revenue is not profit.** If you mention a listing's sales,
   mention its `net` and `margin_pct` too. A `loss_maker: true`
   listing must be reported as losing money, however well it sells.

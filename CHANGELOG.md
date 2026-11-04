@@ -1,5 +1,37 @@
 # Changelog
 
+## v1.0.0 — 2026-11-04
+
+The professional release. The engine is unchanged — same model,
+same numbers, same exit codes — rebuilt to the standard of a tool
+you install once and keep.
+
+- **Installable package.** `pyproject.toml` with the console entry
+  point `seller-profit-truth`. Install with pipx or pip from the
+  GitHub repo (`pipx install
+  git+https://github.com/jasveerai88/seller-profit-truth`); running
+  the source checkout directly still works. Verified: a clean-venv
+  install followed by the README quickstart produces output
+  byte-identical to the source runs, exit codes included.
+- **README as a landing page.** The sample's loss-maker leads (the
+  60-sale mug at −233.17), the full report and the break-even solve
+  are shown as verbatim real runs, and the honest limits moved up
+  front — including the two published wrinkles the encoded defaults
+  simplify, with the override commands that fold them in: Etsy's
+  Offsite Ads fee is 15% below $10,000 in annual sales (the default
+  is the 12% tier), and Gumroad charges card processing (2.9% +
+  $0.30) on top of its 10% + $0.50 on direct sales. Fee facts are
+  sourced to the platforms' published pages, checked 2026-11-04.
+- **Demo GIF** built from real runs, and a social preview image.
+- **`SECURITY.md`** and issue templates: correctness reports use the
+  hand-worked-calculation standard (sanitize real sales figures
+  before attaching them to a public issue).
+- **`SKILL.md`** updated to the installed command and the git+
+  install, with the two default-simplifications added to the agent
+  honesty rules.
+- No behaviour changes; version strings only. 45 tests, all
+  passing.
+
 ## v0.1.0 — 2026-11-04
 
 First release.

@@ -329,7 +329,7 @@ class TestCli(unittest.TestCase):
         self.assertEqual(p.returncode, 1)
         obj = json.loads(p.stdout)
         self.assertEqual(obj["tool"], "seller-profit-truth")
-        self.assertEqual(obj["version"], "0.1.0")
+        self.assertEqual(obj["version"], "1.0.0")
         self.assertEqual(obj["totals"]["loss_makers"], 1)
         self.assertAlmostEqual(obj["totals"]["net"], 1013.91)
         mug = [l for l in obj["listings"]

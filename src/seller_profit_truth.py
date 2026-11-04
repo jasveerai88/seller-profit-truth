@@ -65,7 +65,7 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 TOOL = "seller-profit-truth"
 FEES_AS_OF = "2026-11"
 

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seller-profit-truth"
+version = "1.0.0"
+description = "True per-listing profit for Etsy and Gumroad sellers: every platform fee line separately, shipping and returns subtracted, LOSS-MAKER flags on negative listings, plus a break-even mode for the minimum price that truly hits a target margin after fees."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Jasveer Singh" },
+]
+keywords = [
+    "etsy",
+    "gumroad",
+    "ecommerce",
+    "profit",
+    "marketplace-fees",
+    "pricing",
+    "cli",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Accounting",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/jasveerai88/seller-profit-truth"
+Repository = "https://github.com/jasveerai88/seller-profit-truth"
+Issues = "https://github.com/jasveerai88/seller-profit-truth/issues"
+
+[project.scripts]
+seller-profit-truth = "seller_profit_truth:main"
+
+# The implementation is a single standard-library module in
+# src/; it is installed as the top-level module
+# `seller_profit_truth`, and `python3 src/seller_profit_truth.py`
+# keeps working from a checkout.
+[tool.setuptools]
+package-dir = { "" = "src" }
+py-modules = ["seller_profit_truth"]
