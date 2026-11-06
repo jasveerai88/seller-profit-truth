@@ -5,10 +5,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "seller-profit-truth"
 version = "1.0.0"
-description = "True per-listing profit for Etsy and Gumroad sellers: every platform fee line separately, shipping and returns subtracted, LOSS-MAKER flags on negative listings, plus a break-even mode for the minimum price that truly hits a target margin after fees."
+description = "Etsy and Gumroad sellers: find your real profit per listing after platform fees, shipping and returns — loss-making listings flagged, break-even price calculator included. Local CLI, no uploads, pure Python."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
 authors = [
     { name = "Jasveer Singh" },
 ]
@@ -26,7 +26,6 @@ classifiers = [
     "Environment :: Console",
     "Intended Audience :: End Users/Desktop",
     "Intended Audience :: Financial and Insurance Industry",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
@@ -41,6 +40,7 @@ dependencies = []
 Homepage = "https://github.com/jasveerai88/seller-profit-truth"
 Repository = "https://github.com/jasveerai88/seller-profit-truth"
 Issues = "https://github.com/jasveerai88/seller-profit-truth/issues"
+Changelog = "https://github.com/jasveerai88/seller-profit-truth/blob/main/CHANGELOG.md"
 
 [project.scripts]
 seller-profit-truth = "seller_profit_truth:main"
