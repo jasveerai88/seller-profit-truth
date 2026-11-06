@@ -23,8 +23,8 @@ The sample bundled with this tool proves it. Its best-selling physical product, 
 ## Quick start
 
 ```bash
-pipx install git+https://github.com/jasveerai88/seller-profit-truth
-# or: pip install git+https://github.com/jasveerai88/seller-profit-truth
+pipx install seller-profit-truth
+# or: pip install seller-profit-truth
 
 # from a clone, so the bundled examples are on disk:
 seller-profit-truth report examples/sample.json
