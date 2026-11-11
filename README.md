@@ -247,7 +247,7 @@ Etsy and Gumroad sellers whose dashboard says "sales" and whose bank account dis
 
 ## Support
 
-If this saves you from scaling a loss-maker, consider sponsoring: **[github.com/sponsors/jasveerai88](https://github.com/sponsors/jasveerai88)**
+If this saves you from scaling a loss-maker, consider sponsoring: **[github.com/sponsors/jasveerai88](https://github.com/sponsors/jasveerai88)**. Sponsorship funds the time to maintain seller-profit-truth, ship fixes, and build the next checks its users ask for.
 
 ## Licence
 
